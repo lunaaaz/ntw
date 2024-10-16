@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTW_from</title>
+    <link rel="stylesheet" href="Cont.css">
+
+ </head>
+ <body>
+
+     <!-- Seção Principal -->
+
+     <header>
+        <nav>
+            <div class="logo">
+                <img src="ntwbranca.jpg" href="ntwbranca.jpg" width="60" height="60">
+            </div>
+            <ul>
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="Serv.html">Serviços</a></li>
+                <li><a href="Sobre.html">Sobre nós</a></li>
+                <li><a href="Sobre.html">Clientes</a></li>
+                <li><a href="Cont.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+ <!-- Seção de Contato -->
+
+ <section id="contato" class="contact-page">
+    <div class="contact-container">
+
+        <!-- Lado Esquerdo - Meios de Contato -->
+        <div class="contact-info">
+
+            <h2>Entre em contato conosco</h2>
+            <p><strong>Email:</strong> contato@ntwcontabilidade.com.br</p>
+            <p><strong>Telefone:</strong> (11) 1234-5678</p>
+            <p><strong>Endereço:</strong> Rua Exemplo, 123, Milagres - CE </p>
+            <p><strong>Horário de atendimento:</strong> Seg - Sex, 07h - 17h</p>
+        </div>
+
+        <!-- Lado Direito - Formulário -->
+        <div class="contact-form">
+            <h2>Formulário de Contato</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular" required>
+
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" required>
+                    <option value="" disabled selected>Selecione o estado</option>
+                    <!-- Lista completa dos 26 estados do Brasil + DF -->
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+
+                <label for="cidade">Cidade:</label>
+                <select id="cidade" name="cidade" required>
+                    <option value="" disabled selected>Selecione a cidade</option>
+                </select>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    const cidadesPorEstado = {
+        AC: ['Acrelândia', 'Assis Brasil', 'Brasiléia', 'Bujari' , 'Capixaba', 'Cruzeiro do Sul', 'Epitaciolândia', 
+        'Feijó', 'Jordão', 'Manoel Urbano' , 'Marechal Thaumaturgo', 'Mâncio Lima', 'Plácido de Castro', 'Porto Acre', 'Porto Walter', 
+        'Rio Branco','Rodrigues Alves', 'Santa Rosa do Purus', 'Sena Madureira', 'Senador Guiomard', 'Taraucá', 'Xapuri'],
+        AL: ['Àgua Branca','Anadia',  'Arapiraca','Atalaia','Barra de Santo Antônio','Barra de São Miguel','Batalha',
+        'Belém','Belo Monte','Boca da Mata','Branquinha','Cacimbinhas','Cajueiro','Campestre','Campo Alegre','Campo Grande','Canapi','Capela',
+        'Carneiros','Chã Preta','Coité do Nóia','Colônia Leolpodina','Coqueiro Seco','Coruripe','Craíbas','Delmiro Gouveia','Dois Riachos',
+        'Estrela de Alagoas','Feira Grande','Feliz Deserto','Flexeiras','Girau do Ponciano','Ibateguara','Igaci',
+        'Igreja Nova','Inhapi','Jacaré dos homens','Jacuípe','Japaratinga','Jaramataia','Jequiá da praia ','Joaquim Gomes','Jundiá','Junqueiro',
+        'Lagoa da Canoa','Limoeiro de Anadia','Maceió','Major Isidoro','Mar Vermelho','Maragogi','Maravilha','Marechal Deodoro','maribondo',
+        'Mata Grande','Matriz de Camaragibe','Messias','Minador do Negrão','Monteirópolis','Murici','Novo Lino','Olho dágua das Flores',
+        'Olho dágua do Casado','Olho dágua Grande','Olivença','Ouro Branco','Palestina','Palmeira dos Ìndios','Pão de Açúcar','Pariconha',
+        'Paripueira','Passo de Camaragibe','Paulo Jacinto','Penedo','Piaçabuçu','Pilar','Pindoba','Piranhas','Poço das Trincheiras','Porto Calvo',
+        'Porto de Pedras','Porto Real do Colégio','Quebrangulo','Rio Largo','Roteiro','Santa Luzia do Norte','Sanatana do Ipanema','Santana do Mundaú',
+        'São Brás','São José da Laje','São José da Tapera','São Luís do Quitunde','São Miguel dos Campos','São Miguel dos Milagres','São Sebastião',
+        'Satuba','Senador Rui Palmeira','Tanque dArca','Taquarana','Teotônio Virela','Traipu','União dos Palmares','Viçosa','','','','','','','','','','' ],
+        AP: ['Macapá', 'Santana', 'Oiapoque'],
+        AM: ['Manaus', 'Parintins', 'Itacoatiara'],
+        BA: ['Salvador', 'Feira de Santana', 'Vitória da Conquista'],
+        CE: ['Fortaleza', 'Juazeiro do Norte', 'Sobral' , 'Caucaia', 'Maracanaú', 'Sobral', 'Crato', 'Itapipoca', 'Maranguape',
+         'Iguatu', 'Quixadá', 'Pacatuba', 'Quixeramobim', 'Aquiraz', 'Russas', 'Canindé', 'Tianguá', 'Crateús', 'Aracati', 
+         'Pacajus', 'Cascavel', 'Icó', 'Horizonte', 'Camocim', 'Acaraú', 'Morada Nova', 'Viçosa do Ceará', 'Barbalha', 'Limoeiro do Norte'
+         , 'Tauá', 'Trairi', 'Granja', 'Boa Viagem', 'Acopiara', 'Eusébio', 'Beberibe', 'Itapajé', 'Brejo Santo', 'São Gonçalo Do Amarante'
+         , 'Mauriti', 'São Benedito', 'Mombaça', 'Santa Quitéria', 'Amontada', 'Pedra Branca', 'IPU', 'Itarema', 'Várzea Alegre',  
+         'Guaraciaba do Norte ', 'Massapê', 'Ipueiras', 'Itaitinga', 'Pentecosta', 'Missão Velha', 'Baturité', 'Paracuru', 'Ubajara'
+         , 'Jaguaribe', 'Jaguaruana', 'Paraipaba', 'Bela Cruz', 'Santana do Acaraú', 'Nova Russas', 'Parambu', 'Lavras da Mangabeira'
+         , 'Tabuleiro do Norte', 'Redenção', 'Novo Oriente', 'Milagres', 'Campos Sales', 'Marco', 'Jardim', 'Caririaçu', 'Aracoiaba'
+         , 'Tamboril', 'Independência', 'Guaiúba', 'Ocara', 'Cedro', 'Senador Pompeu', 'Ibiapina', 'Jucás', 'Cruz', 'Aurora', 
+         'Forquilha', 'Irauçuba', 'Assaré', 'Coreaú', 'Barro', 'Caridade', 'Morrinhos', 'Barreira', 'Quixeré', 'Uruburetama',
+          'Itatira', 'Araripe', 'Orós', 'Quiterianópolis', 'Catarina', 'Pindoretama', 'Chorozinho', 'Hidrolândia', 'Icapuí', 
+          'Umirim', 'Jijoca de Jericoara', 'Madalena', 'Farias Brito', 'Tejuçuoca', 'Cariús', 'Reriutaba', 'Cariré' , 'Varjota', 
+          'Solonópole', 'Banabuiú', 'Jaguaretama', 'Croatá', 'Capistrano', 'Santana do Cariri', 'Caranubal', 'Aiuaba',
+           'Monsenhor Tabosa', 'Alto santo', 'Piquet Carneiro', 'Salitre', 'Fortim', 'Pereiro', 'Tururu', 'Quixelô', 
+           'Saboeiro', 'Nova olinda', 'Meruoca', 'Barroquinha', 'porteiras', 'Acarape', 'Apuiarés', 'Mucambo', 'Graça', 
+           'Iracema', 'Frecheirinha', 'Uruoca', 'Miraíma', 'Choró', 'Ibaretama', 'Palmácia', 'Palmácia', 'Milhã', 'Chaval',
+            'São Luís do Curu', 'Ibicuitinga', 'Ipaumirim', 'Poranga', 'Alcântaras', 'Mulungu', 'Catunda', 'Pires ferreira', 
+            'Deputado Irapuan Pinheiro', 'Martinópole', 'Groaíras'],
+        DF: ['Brasília'],
+        ES: ['Vitória', 'Vila Velha', 'Serra'],
+        GO: ['Goiânia', 'Anápolis', 'Aparecida de Goiânia'],
+        MA: ['São Luís', 'Imperatriz', 'Caxias'],
+        MT: ['Cuiabá', 'Rondonópolis', 'Várzea Grande'],
+        MS: ['Campo Grande', 'Dourados', 'Três Lagoas'],
+        MG: ['Belo Horizonte', 'Uberlândia', 'Contagem'],
+        PA: ['Belém', 'Santarém', 'Marabá'],
+        PB: ['João Pessoa', 'Campina Grande', 'Patos'],
+        PR: ['Curitiba', 'Londrina', 'Maringá'],
+        PE: ['Recife', 'Caruaru', 'Olinda'],
+        PI: ['Teresina', 'Parnaíba', 'Picos'],
+        RJ: ['Rio de Janeiro', 'Niterói', 'Petrópolis'],
+        RN: ['Natal', 'Mossoró', 'Parnamirim'],
+        RS: ['Porto Alegre', 'Caxias do Sul', 'Pelotas'],
+        RO: ['Porto Velho', 'Ji-Paraná', 'Ariquemes'],
+        RR: ['Boa Vista'],
+        SC: ['Florianópolis', 'Joinville', 'Blumenau'],
+        SP: ['São Paulo', 'Campinas', 'Santos'],
+        SE: ['Aracaju', 'Itabaiana', 'Lagarto'],
+        TO: ['Palmas', 'Araguaína', 'Gurupi']
+    };
+
+    document.getElementById('estado').addEventListener('change', function () {
+        const estadoSelecionado = this.value;
+        const cidades = cidadesPorEstado[estadoSelecionado] || [];
+        const cidadeSelect = document.getElementById('cidade');
+
+        // Limpar opções anteriores
+        cidadeSelect.innerHTML = '<option value="" disabled selected>Selecione a cidade</option>'; 
+
+        // Adicionar as cidades correspondentes
+        cidades.forEach(function (cidade) {
+            const option = document.createElement('option');
+            option.value = cidade;
+            option.textContent = cidade;
+            cidadeSelect.appendChild(option);
+        });
+
+        // Habilitar a seleção de cidade
+        cidadeSelect.disabled = false;
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+<footer>
+    <p>&copy; 2024 NTW Contabilidade. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
